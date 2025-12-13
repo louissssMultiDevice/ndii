@@ -6,7 +6,7 @@ process.on('unhandledRejection', (reason, promise) => {
   console.error('⚠️ Unhandled Rejection:', reason)
 })
 
-import './settinganbot..js';
+import './settinganbot.js';
 import { startDashboard } from './source/dasboard.js';
 import * as baileys from '@whiskeysockets/baileys';
 import qrcode from 'qrcode-terminal';
