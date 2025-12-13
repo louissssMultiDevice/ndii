@@ -76,7 +76,7 @@ global.money = {
 // ── API ENDPOINT ────────────────────────────────────────────────────────────
 global.api = {
   ditss: 'https://ditss.vercel.app',
-  ndiicloud = 'https://ndiicloud.privhandi.my.id
+  ndiicloud: 'https://ndiicloud.privhandi.my.id'
  }
 
 // ── RESPONSE MESSAGE TEMPLATE ───────────────────────────────────────────────
