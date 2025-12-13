@@ -13,7 +13,7 @@
  *  ⚠️  Please keep the header intact when redistributing.
  * -----------------------------------------------------------------------------
  */
-import '../config.js';
+import '../settinganbot.js';
 import { checkStatus } from './database.js';
 export async function LoadDataBase(Ditss, m) {
 	try {
