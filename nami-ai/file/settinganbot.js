@@ -59,7 +59,7 @@ global.ndii = {
   github: 'https://github.com/louissssmultidevice',
   channel: 'https://whatsapp.com/channel/0029VazclOxBVJl7jkbqnW1e',
   channel2: 'https://whatsapp.com/channel/0029Vb69nLG23n3aRi3cpf2U',
-  group: 'https://chat.whatsapp.com/LM2uMVGKGng11cLxYwbTNk?mode=hqrt2,
+  group: 'https://chat.whatsapp.com/LM2uMVGKGng11cLxYwbTNk?mode=hqrt2',
   groupId: 'Not Set',
   channelId: '120363416897292688@newsletter',
   channelId2: 'Not Set'
