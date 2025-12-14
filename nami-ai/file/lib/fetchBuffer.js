@@ -1,39 +1,32 @@
-/*
- * -----------------------------------------------------------------------------
- *  Author         : Ditss
- *  GitHub         : https://github.com/ditss-dev
- *  WhatsApp       : https://wa.me/6281513607731
- *  Channel        : https://whatsapp.com/channel/0029VaimJO0E50UaXv9Z1J0L
- *  File           : fetchBuffer.js
- *  Description    : Source code project Asuma - WhatsApp Bot
- *  Created Year   : 2025
- * -----------------------------------------------------------------------------
- *  📌 Feel free to use and modify this script.
- *  ⚠️  Please keep the header intact when redistributing.
- * -----------------------------------------------------------------------------
- */
-import axios from 'axios';
-
 /**
- * Mengambil file dari URL dalam bentuk Buffer
+ * Mengambil file dari URL dalam bentuk Buffer (menggunakan Fetch API)
  * @param {string} url - Link file
- * @param {object} options - Opsi tambahan untuk request axios
+ * @param {object} options - Opsi tambahan untuk request fetch
  * @returns {Promise<Buffer>}
  */
 export async function getBuffer(url, options = {}) {
   try {
-    const res = await axios({
-      method: 'get',
-      url,
+    // Menggunakan Fetch API sebagai pengganti axios
+    const response = await fetch(url, {
       headers: {
-        'DNT': 1,
-        'Upgrade-Insecure-Request': 1
+        'DNT': '1',
+        'Upgrade-Insecure-Request': '1'
       },
-      ...options,
-      responseType: 'arraybuffer'
+      ...options
     });
-    return Buffer.from(res.data);
+
+    // Cek jika response tidak ok (status bukan 200-299)
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    // Mengambil data sebagai ArrayBuffer[citation:8] lalu konversi ke Buffer
+    const arrayBuffer = await response.arrayBuffer();
+    return Buffer.from(arrayBuffer);
+
   } catch (err) {
-    throw new Error(`Gagal mengambil buffer dari URL: ${err.message}`);
+    // Tambahkan informasi spesifik fetch jika error belum memiliki pesan
+    const errorMessage = err.message || 'Unknown error occurred';
+    throw new Error(`Gagal mengambil buffer dari URL: ${errorMessage}`);
   }
 }
